@@ -5,6 +5,7 @@
 	<title>Movies Database</title>
 	
 	<link rel="stylesheet" href="main.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha/css/bootstrap.css">
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-beta1/jquery.min.js"></script>
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js"></script>
@@ -12,21 +13,32 @@
 
 <body>
 	<div id="container">
-		
+		<div id="search-box" class="col-xs-12">
+			<form action="" id="search-form" class="form-inline">
+				<input type="text" id="search-query">
+				<input type="submit">
+			</form>
+		</div>
+		<div id="results-container">
+			
+		</div>
 	</div>
 
 	<!--MUSTACHE TEMPLATES-->
 	<script id="results-tpl" type="text/template">
-		<div id="search-results">
+		<div id="search-results" class="col-xs-12">
 			{{#results}}
-				{{> resultPartial}}
+				<div class="search-result col-xs-12 col-sm-6 col-md-3 col-lg-2">
 
+					<div class="content">{{title}}</div>
+				</div>
+		
 			{{/results}}
 
 		</div>
 	</script>
 	<script id="result-partial" type="text/template">
-		<div class="search-result">{{title}}</div>
+		
 	</script>
 	<!--END MUSTACHE TEMPLATES-->
 	<script src="main.js"></script>
