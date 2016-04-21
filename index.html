@@ -13,10 +13,10 @@
 
 <body>
 	<div id="container">
-		<div id="search-box" class="col-xs-12">
+		<div id="search-box" class="form-group col-xs-12">
 			<form action="" id="search-form" class="form-inline">
 				<input type="text" id="search-query">
-				<input type="submit">
+				<input type="submit" class="btn btn-default">
 			</form>
 		</div>
 		<div id="results-container">
@@ -30,7 +30,10 @@
 			{{#results}}
 				<div class="search-result col-xs-12 col-sm-6 col-md-3 col-lg-2">
 
-					<div class="content">{{title}}</div>
+					<div class="content" style="background-image: url(http://image.tmdb.org/t/p/w154{{poster_path}})">
+					
+					<span class="title">{{title}}</span>
+					</div>
 				</div>
 		
 			{{/results}}
