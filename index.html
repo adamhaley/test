@@ -19,14 +19,14 @@
 	<script id="results-tpl" type="text/template">
 		<div id="search-results">
 			{{#results}}
-				{{.}}
+				{{> resultPartial}}
 
 			{{/results}}
 
 		</div>
 	</script>
 	<script id="result-partial" type="text/template">
-		<div class="search-result">{{}}</div>
+		<div class="search-result">{{title}}</div>
 	</script>
 	<!--END MUSTACHE TEMPLATES-->
 	<script src="main.js"></script>

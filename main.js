@@ -1,6 +1,8 @@
 (function(){
 	var resultsTpl = $("#results-tpl").html()
-	, resultPartial = $("#result-partial").html()
+	, partials = {
+		resultPartial: $("#result-partial").html()
+	}
 	, $el = $("#container")
 	;
 
@@ -8,7 +10,7 @@
 
 	$.get("data/movies.json",function(data){
 		console.log(data.results);
-		var html = Mustache.to_html(resultsTpl,data);
+		var html = Mustache.to_html(resultsTpl,data,partials);
 		$el.html(html);
 
 	});
